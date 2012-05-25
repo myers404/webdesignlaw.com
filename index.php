@@ -12,7 +12,6 @@
 		'view' => new TwigView
 	));
 	
-	    
     //Define Routes     
     $app->get('/', 'home');
     $app->get('/contracts', 'contracts');
