@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+
+{% block page_title %}Web Design Contracts for Freelancers - Contact{% endblock %}
+
+{% block content %}
+<!-- container -->
+<div class="container">
+	<div class="row">
+		<div class="eight columns">
+    		<h1>Have Questions or Comments?</h1>
+    		<h2>The Fast and Easy Way</h2>
+    		<p>My practice is primarily an online practice, so the fastest and easiest way to get a hold of me is to email me at <a href="mailto:jmyers@webdesignlaw.com">jmyers@webdesignlaw.com</a>, or use the form below. I will typically get back to you within an hour or so.</p>
+    		
+    		<p>Feel free to ask me anything. I can answer questions about web design contracts in general, and question about the web design business.  I won't be able to answer questions about specific legal issues you are having (unless you hire me).</p>
+    		
+    		<p>You can also reach me by phone: <a href="tel:714-706-1337">714-706-1337</a></p>
+    		
+    		<div class="row">
+    			<div class="eight columns">
+    				<form class="nice" id="contactForm">
+    					<fieldset>
+    						<h5>Email me using this form</h5>
+    						<hr>
+    						
+    						<div class="form-field">
+								<label for="name">* Name</label>
+    							<input placeholder="Name" type="text" class="large oversize input-text" id="name" name="name">
+    							<small class="error">Please enter your name.</small>
+							</div>
+							
+							<div class="form-field">
+								<label for="email">* Email</label>
+    							<input placeholder="Email" type="text" class="large oversize input-text" id="email" name="email">
+    							<small class="error">Please check your email.</small>
+							</div>
+							
+							<div class="form-field">
+								<label for="message">* Message</label>
+    							<textarea placeholder="Questions, Comments, Concerns?" class="large oversize" id="message" name="message" style="height: 100px;"></textarea>
+    							<small class="error">Oops, you forgot to put a message.</small>
+							</div>
+    				  		
+    				  		<div class="alert-box success">
+								Your message has been sent. I will get back to you ASAP.
+								<a href="" class="close">&times;</a>
+							</div>
+							<div class="alert-box warning">
+								Sorry, there was a problem sending your message. Please try again.
+								<a href="" class="close">&times;</a>
+							</div>
+    						
+    						<p><button id="contactFormSend" type="button" class="nice medium radius white button">Send Message</button></p>
+    					</fieldset>
+    				</form>
+    			</div>
+    		</div>
+		</div>
+		<div class="four columns">
+    		<ul class="vcard">
+				<li class="fn">Jacob C. Myers</li>
+    			<li class="org">Web Design Lawyer</li>
+    			<li class="tel"><a href="tel:714-706-1337">714-706-1337</a></li>
+    			<li class="email"><a href="mailto:jmyers@webdesignlaw.com">jmyers@webdesignlaw.com</a></li>
+    			<li><a class="url" href="http://webdesignlaw.com/">http://webdesignlaw.com/</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block extra_js %}
+		<script>
+			$(document).ready(function() {
+				
+				$('.form-field small').hide();
+				$("#contactForm .alert-box").hide();
+				
+				$("#contactFormSend").bind("click", function(event){
+					
+					var name = $("#name").val();
+					var email = $("#email").val();
+					var message = $("#message").val();
+					var send = true;
+					var regex = /^([A-Za-z0-9_\+\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+					
+					$('.form-field small').fadeOut();
+					$("#contactForm .alert-box").fadeOut();
+					$("#contactFormSend").attr('disabled', 'disabled');
+					
+					if(name.length < 2){
+						$("#name").parent().find('small').fadeIn();
+						send = false;
+						$("#contactFormSend").removeAttr('disabled');
+					}
+					
+					if(message.length < 2){
+						$("#message").parent().find('small').fadeIn();
+						send = false;
+						$("#contactFormSend").removeAttr('disabled');
+					}
+					
+					if(!regex.test(email)){
+						$("#email").parent().find('small').fadeIn();
+						send = false;
+						$("#contactFormSend").removeAttr('disabled');
+					}
+					
+					if(send){
+						$.post(
+							"/request",
+							$('#requestForm').serialize(),
+							function(msg){
+								if(msg == "true"){
+									$("#requestForm .success").fadeIn();
+								}else{
+									$("#requestForm .warning").fadeIn();
+								}
+								
+								$("#requestFormSend").removeAttr('disabled');
+								$('#requestForm input:text').val('');
+								$('#requestForm textarea').val('');
+							}
+						);
+					}
+					
+					event.preventDefault();
+				});
+			});
+		</script>
+{% endblock %}

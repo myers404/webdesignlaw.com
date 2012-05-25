@@ -1,0 +1,136 @@
+{% extends 'services/layout.html' %}
+
+{% block page_title %}My Page Title{% endblock %}
+
+{% block services_content %}
+<h1>Web Design Contract Review</h1>
+<p>Think your are protected, but want to be sure? Has a client given you their contract and you want to ensure it's on the up-and-up? Find your contracts strengths and weaknesses. Find out what that contract really says.</p>
+
+<h2>What You Get</h2>
+<ol>
+	<li>Assessment of your current business practices and needs using my detailed questionnaire, and follow-up questions as needed</li>
+	<li>A thorough assessment of your current contract given your business practices and needs.</li>
+	<li>Legal advice and notes on regarding your contract.</li>
+	<li>Recommendations on alternative provisions</li>
+	<li>Available by email, without any extra fees (phone and in-person when needed).</li>
+</ol>
+
+<h2>Request Review of a Web Design Contract</h2>
+Congratulations on taking the first step to reviewing a web design contract. 
+
+    				<form class="nice" id="requestForm">
+    					<fieldset>
+    						<div class="form-field">
+								<label for="name">* Full Name</label>
+    							<input placeholder="First and Last Name" type="text" class="large oversize input-text" id="name" name="name">
+    							<small class="error">Please enter your name.</small>
+							</div>
+							
+							<div class="form-field">
+								<label for="company">Company (if applicable)</label>
+    							<input placeholder="Company" type="text" class="large oversize input-text" id="company" name="company">
+							</div>
+							
+							<div class="form-field">
+								<label for="email">* Email</label>
+    							<input placeholder="Email" type="text" class="large oversize input-text" id="email" name="email">
+    							<small class="error">Please check your email.</small>
+							</div>
+							
+							<div class="form-field">
+								<label for="phone">* Contact Phone Number</label>
+    							<input placeholder="Contact Phone Number" type="text" class="large oversize input-text" id="phone" name="phone">
+    							<small class="error">Please include your 10 digit phone number.</small>
+							</div>
+							
+							<div class="form-field">
+								<label for="message">Do you have any special contract requests?</label>
+    							<textarea placeholder="Special Contract Requests?" class="large oversize" id="message" name="message" style="height: 100px;"></textarea>
+							</div>
+							
+							<div class="form-field">
+								<div class="alert-box">
+									<label for="california"><input type="checkbox" id="california"> This contract will be used in California.</label>
+								</div>
+							</div>
+							
+							<input type="hidden" name="request_type" value="review" />
+    				  		
+    				  		<div class="alert-box success">
+								Your message has been sent. I will get back to you ASAP.
+								<a href="" class="close">&times;</a>
+							</div>
+							<div class="alert-box warning">
+								Sorry, there was a problem sending your message. Please try again.
+								<a href="" class="close">&times;</a>
+							</div>
+    						
+    						<p><button id="requestFormSend" type="button" class="nice medium radius white button">Send Request</button></p>
+    					</fieldset>
+    				</form>
+{% endblock %}
+
+{% block extra_js %}
+		<script>
+			$(document).ready(function() {
+								
+				$('.form-field small').hide();
+				$("#requestForm .alert-box.success").hide();
+				$("#requestForm .alert-box.warning").hide();
+				
+				$("#requestFormSend").bind("click", function(event){
+					
+					var name = $("#name").val();
+					var company = $("#company").val();
+					var email = $("#email").val();
+					var phone = $("#phone").val();
+					phone = phone.replace(/[^0-9]/g, '');					
+					var send = true;
+					var email_regex = /^([A-Za-z0-9_\+\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+					
+					$('.form-field small').fadeOut();
+					$("#requestForm .alert-box.success").fadeOut();
+					$("#requestForm .alert-box.warning").fadeOut();
+					$("#reqestFormSend").attr('disabled', 'disabled');
+					
+					if(name.length < 2){
+						$("#name").parent().find('small').fadeIn();
+						send = false;
+						$("#requestFormSend").removeAttr('disabled');
+					}
+					
+					if(!email_regex.test(email)){
+						$("#email").parent().find('small').fadeIn();
+						send = false;
+						$("#requestFormSend").removeAttr('disabled');
+					}
+										
+					if(phone.length != 10){
+						$("#phone").parent().find('small').fadeIn();
+						send = false;
+						$("#requestFormSend").removeAttr('disabled');
+					}
+					
+					if(send){
+						$.post(
+							"/request",
+							$('#contactForm').serialize(),
+							function(msg){
+								if(msg == "true"){
+									$("#contactForm .success").fadeIn();
+								}else{
+									$("#contactForm .warning").fadeIn();
+								}
+								
+								$("#contactFormSend").removeAttr('disabled');
+								$('#contactForm input:text').val('');
+								$('#contactForm textarea').val('');
+							}
+						);
+					}
+					
+					event.preventDefault();
+				});
+			});
+		</script>
+{% endblock %}

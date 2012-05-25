@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- container -->
+<div class="container">
+  <div class="row">
+    <div class="four columns push-eight sidebar">
+		<ul class="nav-bar show-on-phones">
+			<li class="has-flyout">
+				<a href="#">Contracts Menu</a>
+				<a href="#" class="flyout-toggle"><span></span></a>
+				<div class="flyout small">
+					<ul>
+						<li {% if sub_url=='home' %}class="current"{% endif %}><a href="/contracts">1. Welcome</a></li>
+						<li {% if sub_url=='what' %}class="current"{% endif %}><a href="/contracts/what-and-why">2. What is a Contract and Why Have One?</a></li>
+						<li {% if sub_url=='unique' %}class="current"{% endif %}><a href="/contracts/uniqueness">3. Contracts: To Each His Own.</a></li>
+						<li {% if sub_url=='negotiate' %}class="current"{% endif %}><a href="/contracts/negotiation">4. Negotiation: An Agreement, Not a Fight.</a></li>
+						<li {% if sub_url=='sign' %}class="current"{% endif %}><a href="/contracts/signing">5. Get That Contract Signed.</a></li>
+						<li>Sample Form Contracts & Documents</li
+						<li {% if sub_url=='forms' %}class="current"{% endif %}><a href="/contracts/forms-introduction">Introduction to Forms</a></li>
+						<li {% if sub_url=='letter' %}class="current"{% endif %}><a href="/contracts/letter-of-agreement">Letter of Agreement</a></li>
+						<li {% if sub_url=='proposal' %}class="current"{% endif %}><a href="/contracts/project-proposal">Project Proposal</a></li>
+						<li {% if sub_url=='fulltc' %}class="current"{% endif %}><a href="/contracts/full-terms-and-conditions">Full Terms & Conditions</a></li>
+						<li {% if sub_url=='condensedtc' %}class="current"{% endif %}><a href="/contracts/condensed-terms-and-conditions">Condensed Terms & Conditions</a></li>
+						<li {% if sub_url=='invoice' %}class="current"{% endif %}><a href="/contracts/invoice">Invoice</a></li>
+						<li {% if sub_url=='pastdue' %}class="current"{% endif %}><a href="/contracts/past-due-reminder">Past Due Reminder</a></li>
+						<li {% if sub_url=='collection' %}class="current"{% endif %}><a href="/contracts/collection-letter">Collection Letter</a></li>
+						<li>Resources</li
+						<li><a href="http://www.aiga.org/">American Institute of Graphic Arts (AIGA)</a></li>
+						<li><a href="https://www.graphicartistsguild.org/">Graphic Artists Guild (GAG)</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<div  class="hide-on-phones">
+			<h3>Introduction</h3>
+			<ul>
+				<li {% if sub_url=='home' %}class="current"{% endif %}><a href="/contracts">1. Welcome</a></li>
+				<li {% if sub_url=='what' %}class="current"{% endif %}><a href="/contracts/what-and-why">2. What is a Contract and Why Have One?</a></li>
+				<li {% if sub_url=='unique' %}class="current"{% endif %}><a href="/contracts/uniqueness">3. Contracts: To Each His Own.</a></li>
+				<li {% if sub_url=='negotiate' %}class="current"{% endif %}><a href="/contracts/negotiation">4. Negotiation: An Agreement, Not a Fight.</a></li>
+				<li {% if sub_url=='sign' %}class="current"{% endif %}><a href="/contracts/signing">5. Get That Contract Signed.</a></li>
+			</ul>
+			<p></p>
+			<p></p>
+			<h3>Sample Form Contracts & Documents</h3>
+			<ul>
+				<li {% if sub_url=='forms' %}class="current"{% endif %}><a href="/contracts/forms-introduction">Introduction to Forms</a></li>
+				<li {% if sub_url=='letter' %}class="current"{% endif %}><a href="/contracts/letter-of-agreement">Letter of Agreement</a></li>
+				<li {% if sub_url=='proposal' %}class="current"{% endif %}><a href="/contracts/project-proposal">Project Proposal</a></li>
+				<li {% if sub_url=='fulltc' %}class="current"{% endif %}><a href="/contracts/full-terms-and-conditions">Full Terms & Conditions</a></li>
+				<li {% if sub_url=='condensedtc' %}class="current"{% endif %}><a href="/contracts/condensed-terms-and-conditions">Condensed Terms & Conditions</a></li>
+				<li {% if sub_url=='invoice' %}class="current"{% endif %}><a href="/contracts/invoice">Invoice</a></li>
+				<li {% if sub_url=='pastdue' %}class="current"{% endif %}><a href="/contracts/past-due-reminder">Past Due Reminder</a></li>
+				<li {% if sub_url=='collection' %}class="current"{% endif %}><a href="/contracts/collection-letter">Collection Letter</a></li>
+			</ul>
+			<p></p>
+			<p></p>
+			</h3><h3>Resources</h3>
+			<ul>
+				<li><a href="http://www.aiga.org/">American Institute of Graphic Arts (AIGA)</a></li>
+				<li><a href="https://www.graphicartistsguild.org/">Graphic Artists Guild (GAG)</a></li>
+			</ul>
+			<p></p>
+		</div>	
+	</div>
+    <div class="eight columns pull-four">
+		{% block contracts_content %}
+		
+		{% endblock %}
+	</div>
+  </div>
+</div>
+<!-- container -->
+{% endblock %}

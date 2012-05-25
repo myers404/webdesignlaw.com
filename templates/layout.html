@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+	
+	<meta name="description" content="Rock-Solid Design Contracts for Freelance Web Designers">
+	<meta name="keywords" content="web design contract, freelance contract template, design freelance contract, contract for freelance, design contract, freelance sample contract"> 	 
+
+	<title>{% block page_title %}{% endblock %}</title>
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="http://webdesignlaw.com/stylesheets/foundation.css">
+	<link rel="stylesheet" href="http://webdesignlaw.com/stylesheets/app.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+	<body>
+		<!-- top -->
+		<div class="top-bar"></div>
+		<!-- top -->
+	
+		<!-- callout -->
+		<div class="callout-bar">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns">
+						<div class="callout-block">
+							<div class="row">
+								<div class="four columns">
+									<h3>Jacob C. Myers, Esq.</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="six columns">
+									<h1>Design Contracts for Freelance Web Designers</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- callout -->
+		
+		<!-- menu -->
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<ul class="sub-nav">
+						<li {% if main_url=='home' %}class="current"{% endif %}><a href="/" title="Freelance Contracts for Designers">Home</a></li>
+						<li {% if main_url=='contracts' %}class="current"{% endif %}><a href="/contracts" title="Freelance Contract Templates and Samples">Contract Templates and Samples</a></li>
+						<li {% if main_url=='services' %}class="current"{% endif %}><a href="/services" title="Hite a Lawyer">Services & Price</a></li>
+						<li {% if main_url=='about' %}class="current"{% endif %}><a href="/about" title="">About</a></li>
+						<li {% if main_url=='contact' %}class="current"{% endif %}><a href="/contact" title="">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- menu -->
+
+		{% block content %} {% endblock %}
+		
+		<!-- footer -->
+		<div class="container footer">
+			<div class="row">
+				<div class="four columns">
+					<h4>About this Site</h4>
+					<p>This site is a web-based practice that allows you to consult with a licensed attorney. In most cases, I can quote you a flat fee based on the nature of legal services you need.</p>
+				</div>
+				<div class="four columns">
+					<h4>About Me</h4>
+					<p>I am a California lawyer and a web developer. I have worked both in-house and freelance, so I understand the issues you face in creating a solid web design contract.</p>
+				</div>
+				<div class="four columns">
+					<h4>Want to Talk?</h4>
+					<div>Call me at <a href="tel:714-706-1337">714-706-1337</a>.</div>
+					<div>Email me at <a href="mailto:jmyers@webdesignlaw.com" title="Design Contracts">jmyers@webdesignlaw.com</a>.</div>
+					<div>Find more info at the <a href="/contact">Contact Page</a></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="twelve columns">
+				<hr>
+				<p>The information contained in this Website is provided for informational purposes only, and should not be construed as offering legal advice, or creating an attorney client relationship between the reader and the author. You should not act or refrain from acting on the basis of any content included in this Website without seeking appropriate legal advice about your individual facts and circumstances from an attorney licensed in your state. Jacob C. Myers is licensed to practice law only in California.</p>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		
+		<!-- Included JS Files -->
+		<script src="http://webdesignlaw.com/javascripts/jquery.min.js"></script>
+		<script src="http://webdesignlaw.com/javascripts/modernizr.foundation.js"></script>
+		<script src="http://webdesignlaw.com/javascripts/foundation.js"></script>
+		<script src="http://webdesignlaw.com/javascripts/app.js"></script>
+		<script src="http://webdesignlaw.com/javascripts/jquery.validate.js"></script>
+		
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+  			var _gaq = _gaq || [];
+  			_gaq.push(['_setAccount', 'UA-31216268-1']);
+  			_gaq.push(['_trackPageview']);
+
+  			(function() {
+    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  			})();
+		</script>
+		
+		{% block extra_js %} {% endblock %}
+
+	</body>
+</html>

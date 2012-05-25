@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- container -->
+<div class="container">
+  <div class="row">
+    <div class="eight columns">
+		{% block services_content %}
+		
+		{% endblock %}
+	</div>
+    <div class="four columns sidebar">
+		<div class="panel">
+		<h2>How it Works.</h2>
+		<ol>
+			<li>Fill out the short form below.</li>
+			<li>I'll send you a detailed questionnaire to determine your contract needs. I'll also send you my service agreement for you to review.</li>
+			<li>After I receive and review your questionnaire, I'll confirm our engagement and send you an electronic version of my service agreement for you to sign electronically.</li>
+			<li>If you requested Contract Drafting, I'll send you a first-draft contract to review and request changes.</li>
+			<li>When I complete my work, I'll send you a PayPal invoice for our agreed upon fees.</li>
+			<li>When I receive payment, I'll send you all completed documents.</li>
+			<li>You are welcome to email me questions at any stage of the process, without any additional charges.</li>
+		</ol>
+		</div>
+    </div>
+  </div>
+</div>
+<!-- container -->
+{% endblock %}

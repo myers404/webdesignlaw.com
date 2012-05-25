@@ -1,0 +1,287 @@
+/* Foundation v2.2 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body,
+p,
+table tbody tr td{
+	color: #333333;
+    font-family: Charter,Hoefler Text,Cambria,Georgia,Times New Roman,serif;
+    font-size: 16px;
+    line-height: 26px;
+    text-shadow:1px 1px #FFFFFF;
+}
+strong{
+	color: #555555;
+}
+h1, h2, h3, h4, span, .button, .home-sidebar p{
+	text-shadow:none;
+}
+.top-bar {
+	border-top: 3px solid #CC0000;
+}
+h1{font-size: 32px;}
+h2{
+	font-size: 1.5em;
+	margin-top: 0.83em;
+}
+h3{
+	font-size: 1.17em;
+	margin-top: 1em;
+}
+h1, h2, h3, h4{
+	color: #CC3300; color: #333333;
+    letter-spacing: 0;
+    text-rendering: optimizelegibility;
+    margin-bottom: 0.23em;
+    font-weight: normal;
+}
+a{
+	color: #CC0000;
+}
+a:hover{
+	color: #333333;
+}
+.sidebar a{
+	font-family: Helvetica Neue,Calibri,Helvetica,Arial,sans serif;
+	font-size: 16px;
+	letter-spacing: 0.3px;
+	line-height: 22px;
+	font-weight: 200;
+}
+.sidebar li.current a{
+	font-weight: bold;
+}
+.callout-block{
+	background: #333333;
+	background-image: url('../images/image.jpg');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	//background-size: 100%;
+	height: 250px;
+	margin-top: 15px;
+}
+.callout-bar h1{
+	background-color: rgba(0, 0, 0, 0.75);
+	color: #FFFFFF;
+	font-family: Helvetica Neue,Calibri,Helvetica,Arial,sans serif;
+	font-weight: bold;
+	padding: 5px 0 5px 60px;
+	letter-spacing: 0.05em;
+	margin: 0;
+}
+.callout-bar h3{
+	background-color: rgba(204, 0, 0, 0.75);
+	color: #FFFFFF;
+	font-family: Helvetica Neue,Calibri,Helvetica,Arial,sans serif;
+	font-weight: bold;
+	padding: 2px 0 2px 60px;
+	margin: 0;
+	margin-top: 75px;
+}
+.footer{
+	margin-top: 25px;
+	padding-top: 15px;
+	background: #EEEEEE; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#F5F5F5'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#F5F5F5)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #EEEEEE,  #F5F5F5); /* for firefox 3.6+ */ 
+	background-repeat: repeat-x;
+}
+.footer, .footer p{
+	font-size: 14px;
+    line-height: 18px;
+}
+.footer h4{
+	font-weight: bold;
+}
+ul.sub-nav{
+	font-size:16px;
+	margin-top:20px;
+	border-top:2px solid #EEEEEE;
+	overflow:hidden;
+}
+ul.sub-nav a{
+	color:#555555;
+	font-variant: small-caps;
+}
+ul.sub-nav a:hover{
+	color:#CC0000
+}
+ul.sub-nav li{
+	display:block;
+	float:left;
+	padding:5px 30px 0 0;
+	font-weight:bold;
+	margin-right:10px;
+	border-top:5px solid #FFFFFF;
+}
+ul.sub-nav li.current{
+	border-top:5px solid #CC0000;
+}
+.label{
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.error{
+	text-shadow: none;
+}
+.form-field{
+	margin-bottom: 20px;
+}
+.align-center{
+	text-align: center;
+}
+.align-left{
+	text-align: left;
+}
+.align-right{
+	text-align: right;
+}
+/* -----------------------------------------
+   Page - Home
+----------------------------------------- */
+.home-sidebar{
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	background-color: #666666;
+	padding: 15px 20px;
+	margin-bottom: 10px;
+}
+.home-sidebar p{
+	color: #FFFFFF;
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+}
+.home-sidebar h3{
+	color: #FFFFFF;
+	font-weight: bold;
+	margin-top: 0px;
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.red.button {
+	background-color: #CC0000;
+}
+/* -----------------------------------------
+   Page - Services
+----------------------------------------- */
+.tabs-content .row li{
+	margin: 0px;
+	padding-left: 0px;
+}
+.service-list li{
+	list-style-type: disc;
+}
+.advantage-list li{
+	margin: 0px;
+	margin-left: 20px;
+	padding-left: 0px;
+	list-style-type: disc;
+}
+.use-list li{
+	margin-left: 30px;
+	padding-left: 0px;
+	list-style-type: disc;
+}
+
+/* -----------------------------------------
+   Page - Contact
+----------------------------------------- */
+input.large, textarea.large {
+	width: 436px;
+}
+small.error{
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+.alert-box{
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+}
+.form-field .alert-box label{
+	margin-bottom: 0px !important;
+}
+/*
+.form-box{
+	border: 1px solid #CCCCCC !important;
+	background: #F5F5F5;
+	padding: 15px !important;
+}
+*/
+.form-box,
+.form-box p,
+.form-box li,
+.form-box table tbody tr td,
+.form-box table thead tr th{
+	font-family: Times;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: normal;
+}
+.form-box ul{
+	margin-bottom: 4px;
+}
+.form-box li{
+	list-style-type: disc;
+	margin: 2px 0 2px 20px;
+}
+.form-box strong{
+	font-weight: bold;
+	color: #333333;
+}
+.form-box em{
+	font-size: 13px;
+	font-weight: bold;
+}
+.form-box table,
+.form-box tr,
+.form-box td,
+.form-box th{
+	margin: 0;
+	padding: 0;
+	background: none !important;
+	border: none;
+}
+.form-box table{
+	border-spacing: 10px;
+	border-collapse: separate !important;
+}
+.form-box .line td,
+.form-box .line th,
+.form-box .line{
+	border-bottom: 1px solid #333333;
+	background: none;
+}
+.form-box.justified{
+	text-align: center;
+}
+.form-box.justified p{
+	text-align: justify;
+}
+.has-flyout{
+	background: #F5F5F5;
+}
+.has-flyout>a{
+	margin-left: 15px;
+}
+/* -----------------------------------------
+   Page - About
+----------------------------------------- */
+.profile-img{
+	border: 1px solid #CCCCCC;
+	padding: 4px;
+	margin: 0 20px 0 0;
+	float: left;
+	width: 150px;
+}
